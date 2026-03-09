@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Fraud Detection — Full Session Report — March 8, 2026</title>
+    <style>
+        :root {
+            --navy: #1a365d;
+            --red: #c53030;
+            --green: #276749;
+            --blue: #2b6cb0;
+            --yellow: #d69e2e;
+            --gray: #4a5568;
+            --light-gray: #e2e8f0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Georgia, 'Times New Roman', serif; line-height: 1.7; color: #2d3748; background: #f7fafc; }
+        .header { background: var(--navy); color: white; padding: 2rem 1.5rem; margin-bottom: 2rem; }
+        .header h1 { font-size: 1.9rem; margin-bottom: 0.4rem; font-weight: 700; }
+        .header .subtitle { font-size: 1rem; opacity: 0.85; font-style: italic; }
+        .header .meta { font-size: 0.82rem; margin-top: 0.75rem; opacity: 0.75; }
+        .container { max-width: 920px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+        h2 { color: var(--navy); font-size: 1.35rem; margin: 2.5rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--red); }
+        h3 { color: var(--gray); font-size: 1.05rem; margin: 1.5rem 0 0.6rem; font-weight: 700; }
+        p { margin-bottom: 1rem; }
+        .alert { padding: 1rem 1.25rem; border-radius: 6px; margin: 1.25rem 0; border-left: 4px solid; }
+        .alert-green  { background: #f0fff4; border-color: var(--green); }
+        .alert-yellow { background: #fffff0; border-color: var(--yellow); }
+        .alert-red    { background: #fff5f5; border-color: var(--red); }
+        .alert-blue   { background: #ebf8ff; border-color: var(--blue); }
+        .alert strong { display: block; margin-bottom: 0.25rem; }
+        .finding-box { background: white; border: 1px solid var(--light-gray); border-left: 4px solid var(--navy); padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0 6px 6px 0; }
+        .finding-box strong { color: var(--navy); display: block; margin-bottom: 0.3rem; }
+        table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.88rem; }
+        th { background: var(--navy); color: white; padding: 0.65rem 0.75rem; text-align: left; font-weight: 600; }
+        td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--light-gray); vertical-align: top; }
+        tr:nth-child(even) { background: #f7fafc; }
+        .tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+        .tag-red    { background: #fed7d7; color: var(--red); }
+        .tag-green  { background: #c6f6d5; color: var(--green); }
+        .tag-yellow { background: #fefcbf; color: #975a16; }
+        .tag-blue   { background: #bee3f8; color: var(--blue); }
+        .tag-gray   { background: #e2e8f0; color: #4a5568; }
+        hr.section-divider { border: none; border-top: 1px solid var(--light-gray); margin: 2.5rem 0; }
+        blockquote { background: #f7fafc; border-left: 4px solid var(--gray); padding: 0.9rem 1.1rem; margin: 1.25rem 0; font-style: italic; color: var(--gray); }
+        code { background: #edf2f7; padding: 0.15rem 0.4rem; border-radius: 3px; font-family: 'SF Mono', Monaco, monospace; font-size: 0.83em; }
+        pre { background: #2d3748; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: 6px; overflow-x: auto; font-size: 0.82rem; margin: 1.25rem 0; line-height: 1.6; }
+        .citation { font-size: 0.8rem; color: var(--gray); margin-top: 0.4rem; }
+        .stat-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.25rem 0; }
+        .stat-box { background: var(--navy); color: white; padding: 0.75rem 1.1rem; border-radius: 6px; min-width: 120px; }
+        .stat-box strong { display: block; font-size: 1.5rem; font-weight: 700; }
+        .stat-box span { font-size: 0.78rem; opacity: 0.85; }
+        .auc-row { display: flex; align-items: center; margin: 0.4rem 0; }
+        .auc-label { width: 70px; font-size: 0.83rem; font-weight: 600; }
+        .auc-track { flex: 1; height: 22px; background: var(--light-gray); border-radius: 4px; margin: 0 0.5rem; position: relative; }
+        .auc-fill  { height: 100%; border-radius: 4px; }
+        .auc-value { width: 55px; text-align: right; font-family: monospace; font-size: 0.88rem; font-weight: 700; }
+        ul, ol { margin: 0.75rem 0 0.75rem 1.5rem; }
+        li { margin: 0.4rem 0; }
+        a { color: var(--blue); }
+        .toc { background: white; border: 1px solid var(--light-gray); border-radius: 6px; padding: 1rem 1.25rem; margin: 1.25rem 0; }
+        .toc h3 { margin-top: 0; }
+        .toc ol { margin: 0.5rem 0 0 1.25rem; }
+        .toc li { margin: 0.3rem 0; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>🔬 Healthcare Fraud Detection: Full Session Report</h1>
+    <div class="subtitle">One evening applying Karpathy's autoresearch pattern to 90M Medicare records</div>
+    <div class="meta">Date: March 8–9, 2026 &nbsp;|&nbsp; Server: Hetzner 5.78.148.70 &nbsp;|&nbsp; DB: 6GB DuckDB, 30 tables, 90M+ rows &nbsp;|&nbsp; Final AUC: 0.8098</div>
+</div>
+
+<div class="container">
+
+    <div class="alert alert-green">
+        <strong>📋 Session Summary</strong>
+        Starting from zero infrastructure, in one evening we built an end-to-end healthcare fraud detection system: data pipeline, iterative model (18 versions), ground truth analysis, fuzzy label expansion experiment, feature importance analysis, top suspect generation, and an LLM web validation pipeline. Final AUC: <strong>0.8098</strong> against OIG LEIE exclusion labels on 1.2M Medicare providers.
+    </div>
+
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ol>
+            <li><a href="#autoresearch">The Autoresearch Pattern</a></li>
+            <li><a href="#data">Data Infrastructure</a></li>
+            <li><a href="#iterations">18 Model Iterations</a></li>
+            <li><a href="#key-discoveries">Key Discoveries</a></li>
+            <li><a href="#leie-analysis">Ground Truth Deep Dive: The 181 Label Question</a></li>
+            <li><a href="#fuzzy">Fuzzy Matching Experiment</a></li>
+            <li><a href="#feature-importance">Feature Importance Analysis</a></li>
+            <li><a href="#suspects">Top Suspect List</a></li>
+            <li><a href="#validation">LLM Web Validation Pipeline</a></li>
+            <li><a href="#next-steps">Next Steps</a></li>
+        </ol>
+    </div>
+
+    <div class="stat-row">
+        <div class="stat-box"><strong>0.5561→0.81</strong><span>AUC improvement</span></div>
+        <div class="stat-box"><strong>18</strong><span>model versions</span></div>
+        <div class="stat-box"><strong>90M+</strong><span>CMS records</span></div>
+        <div class="stat-box"><strong>1.2M</strong><span>providers scored</span></div>
+        <div class="stat-box"><strong>181</strong><span>ground truth labels</span></div>
+        <div class="stat-box"><strong>5</strong><span>scripts built</span></div>
+    </div>
+
+    <!-- SECTION 1 -->
+    <h2 id="autoresearch">1. The Autoresearch Pattern</h2>
+
+    <p>Inspired by <a href="https://github.com/karpathy/autoresearch" target="_blank">Andrej Karpathy's autoresearch project</a>, the core loop is simple:</p>
+
+    <div class="finding-box">
+        <strong>The Three-File Loop</strong>
+        <ul>
+            <li><code>eval.py</code> — <strong>Fixed oracle. Never edited.</strong> Downloads OIG LEIE, measures AUC-ROC, logs to <code>results.tsv</code>.</li>
+            <li><code>detector.py</code> — <strong>The only file the agent edits.</strong> Reads NPI list from stdin, writes <code>npi,score</code> to stdout.</li>
+            <li><code>results.tsv</code> — Experiment log. Tracks every iteration with timestamp, AUC, description.</li>
+        </ul>
+    </div>
+
+    <p>The key insight from Karpathy: you need an <em>automated, objective oracle</em>. In his case it was validation loss on a language model. In ours it's the OIG LEIE — the federal database of providers excluded from Medicare for fraud, abuse, or license violations. Each <code>eval.py</code> run downloads the live LEIE, matches it to CMS billing data, and returns AUC-ROC. The agent iterates on <code>detector.py</code> freely.</p>
+
+    <!-- SECTION 2 -->
+    <h2 id="data">2. Data Infrastructure</h2>
+
+    <table>
+        <tr><th>Dataset</th><th>Rows</th><th>What It Contains</th><th>Fraud Signal</th></tr>
+        <tr><td>CMS Part B Physician Claims</td><td>1.26M</td><td>Every Medicare physician's billing: services, beneficiaries, payments</td><td>Volume anomalies</td></tr>
+        <tr><td>CMS Part D Prescribing</td><td>1.38M</td><td>Drug prescribing patterns by provider including opioid rates</td><td>Opioid patterns</td></tr>
+        <tr><td>Open Payments (Sunshine Act)</td><td>14.7M</td><td>Every pharmaceutical/device payment to a physician</td><td>Industry entanglement</td></tr>
+        <tr><td>NPPES NPI Registry</td><td>7.1M</td><td>Provider demographics, taxonomy codes, address</td><td>Identity resolution</td></tr>
+        <tr><td>PECOS Enrollment</td><td>2.54M</td><td>Medicare enrollment records (2.54M rows = up to 75 per NPI)</td><td>Enrollment gaps</td></tr>
+        <tr><td>OIG LEIE Exclusion List</td><td>82,714</td><td>All providers excluded from Medicare — ground truth labels</td><td>Label source</td></tr>
+    </table>
+
+    <p>All stored in a single <strong>6GB DuckDB database</strong> on a Hetzner server (32GB RAM, 8 vCPU). Python venv at <code>/home/dataops/cms-data/.venv/</code>. DuckDB opened read-only to protect data integrity.</p>
+
+    <!-- SECTION 3 -->
+    <h2 id="iterations">3. Model Iterations — AUC Progression</h2>
+
+    <div style="background:white;border:1px solid var(--light-gray);border-radius:6px;padding:1.25rem;margin:1.25rem 0;">
+        <div class="auc-row"><div class="auc-label">Baseline</div><div class="auc-track"><div class="auc-fill" style="width:55.6%;background:#c53030"></div></div><div class="auc-value" style="color:#c53030">0.5561</div></div>
+        <div class="auc-row"><div class="auc-label">V2</div><div class="auc-track"><div class="auc-fill" style="width:76.95%;background:#d69e2e"></div></div><div class="auc-value" style="color:#d69e2e">0.7695</div></div>
+        <div class="auc-row"><div class="auc-label">V3</div><div class="auc-track"><div class="auc-fill" style="width:74.33%;background:#c53030"></div></div><div class="auc-value" style="color:#c53030">0.7433 ▼</div></div>
+        <div class="auc-row"><div class="auc-label">V4</div><div class="auc-track"><div class="auc-fill" style="width:73.25%;background:#c53030"></div></div><div class="auc-value" style="color:#c53030">0.7325 ▼</div></div>
+        <div class="auc-row"><div class="auc-label">V5</div><div class="auc-track"><div class="auc-fill" style="width:74.83%;background:#d69e2e"></div></div><div class="auc-value">0.7483</div></div>
+        <div class="auc-row"><div class="auc-label">V6</div><div class="auc-track"><div class="auc-fill" style="width:76.64%;background:#d69e2e"></div></div><div class="auc-value">0.7664</div></div>
+        <div class="auc-row"><div class="auc-label">V7</div><div class="auc-track"><div class="auc-fill" style="width:79.04%;background:#d69e2e"></div></div><div class="auc-value">0.7904</div></div>
+        <div class="auc-row"><div class="auc-label">V8–V11</div><div class="auc-track"><div class="auc-fill" style="width:80.13%;background:#2b6cb0"></div></div><div class="auc-value">→0.8013</div></div>
+        <div class="auc-row"><div class="auc-label" style="color:var(--green);font-weight:800">V12 ✓</div><div class="auc-track"><div class="auc-fill" style="width:80.98%;background:#276749"></div></div><div class="auc-value" style="color:var(--green)">0.8098</div></div>
+        <div class="auc-row"><div class="auc-label">V13–V15</div><div class="auc-track"><div class="auc-fill" style="width:80.98%;background:#276749"></div></div><div class="auc-value" style="color:var(--green)">0.8098</div></div>
+    </div>
+
+    <table>
+        <tr><th>Version</th><th>AUC</th><th>Key Change</th><th>Outcome</th></tr>
+        <tr><td>Baseline</td><td>0.5561</td><td>Raw billing z-scores, global normalization</td><td><span class="tag tag-red">Near random</span></td></tr>
+        <tr><td>V2</td><td>0.7695</td><td>Z-scores <em>within specialty peer group</em>; LA opioid rate; PECOS gap × volume; speaking fees</td><td><span class="tag tag-green">+21 pts — massive jump</span></td></tr>
+        <tr><td>V3</td><td>0.7433</td><td>Added HCPCS concentration HHI, upcoding ratio, taxonomy mismatch</td><td><span class="tag tag-red">−3 pts — added noise</span></td></tr>
+        <tr><td>V4</td><td>0.7325</td><td>Percentile bucketing (90/95/99th pct) instead of z-scores</td><td><span class="tag tag-red">−4 pts — z-scores better</span></td></tr>
+        <tr><td>V7</td><td>0.7904</td><td>Ensemble: 50% max(subscores) + 50% weighted mean — breakthrough insight</td><td><span class="tag tag-green">+2 pts</span></td></tr>
+        <tr><td>V8–V11</td><td>0.7920→0.8013</td><td>Progressive shift toward higher max weight (60%→90%)</td><td><span class="tag tag-blue">Confirming max dominates</span></td></tr>
+        <tr><td>V12</td><td>0.8098</td><td>Pure <code>max(subscores)</code> — no weighted mean at all</td><td><span class="tag tag-green">Best result</span></td></tr>
+        <tr><td>V13–V15</td><td>0.8098–0.8100</td><td>Power transforms, top-2 mean — no improvement</td><td><span class="tag tag-gray">Plateau reached</span></td></tr>
+    </table>
+
+    <!-- SECTION 4 -->
+    <h2 id="key-discoveries">4. Key Discoveries</h2>
+
+    <div class="finding-box">
+        <strong>🎯 Discovery #1: Fraud = Extreme on ANY Single Dimension</strong>
+        <p>Taking <code>max(subscores)</code> across all features dramatically outperforms weighted averaging. Fraudsters don't need to be suspicious on every metric — being in the 99th percentile on <em>one</em> metric is sufficient signal. This drove the biggest AUC jump (V7→V12). The implication: the more diverse your subscore pool, the more chances you have to catch different fraud patterns.</p>
+    </div>
+
+    <div class="finding-box">
+        <strong>📈 Discovery #2: Specialty Normalization Is Non-Negotiable</strong>
+        <p>The single biggest jump (baseline→V2, +21 pts) came from computing z-scores <em>within specialty peer groups</em>, not globally. An oncologist billing 50 services/patient is normal. A family practitioner billing 50 services/patient is extreme. Without specialty normalization, legitimate high-billing specialties flood the top of the suspect list.</p>
+    </div>
+
+    <div class="finding-box">
+        <strong>⚠️ Discovery #3: More Features ≠ Better Performance</strong>
+        <p>V3 added HCPCS concentration, upcoding ratio, and taxonomy mismatch — and AUC <em>dropped 3 points</em>. Adding weak features dilutes strong ones unless they're in the max pool as standalone subscores. The final model uses just 6 subscores. Adding 3 more hurt. This is a core lesson in fraud detection: signal quality > quantity.</p>
+    </div>
+
+    <div class="finding-box">
+        <strong>🔬 Discovery #4: PECOS Signal Is Partially Post-Exclusion Leakage</strong>
+        <p>PECOS enrollment gap has a remarkable 0.78 standalone AUC — but this is largely circular: when a provider is excluded from Medicare, their PECOS enrollment is terminated. The feature is detecting the <em>effect</em> of exclusion (PECOS revoked), not the <em>cause</em> (fraud). It floods the top suspect list with legitimate unenrolled providers and excluded-but-since-reinstated providers. The billing signal (svc/bene, pay/bene) is the genuinely predictive dimension.</p>
+    </div>
+
+    <!-- SECTION 5 -->
+    <h2 id="leie-analysis">5. Ground Truth Deep Dive: The 181 Label Question</h2>
+
+    <p>Blake flagged an important concern: with only 181 matched labels out of 82,714 LEIE entries, how reliable is our AUC?</p>
+
+    <h3>Why So Few Matches?</h3>
+
+    <table>
+        <tr><th>LEIE Segment</th><th>Count</th><th>Why Not Matched</th></tr>
+        <tr><td>Placeholder NPI (0000000000)</td><td>74,241</td><td>No NPI on file — pre-NPI era exclusions or organizations</td></tr>
+        <tr><td>Real NPI, matched to CMS</td><td><strong>182</strong></td><td>✅ Our ground truth labels</td></tr>
+        <tr><td>Real NPI, not in CMS</td><td>8,291</td><td>Excluded earlier — billing data scrubbed from CMS over time</td></tr>
+    </table>
+
+    <div class="alert alert-blue">
+        <strong>💡 The Critical Insight: Exclusion Year Distribution</strong>
+        Of our 181 matches: 93% were excluded in 2024–2026. Providers excluded in 2015 have had a decade of billing data removed from CMS public datasets. <strong>Our model is a leading indicator</strong> — it learns what providers looked like right before they got caught, not what historical fraud looked like.
+    </div>
+
+    <h3>Is 181 Enough?</h3>
+    <p>Honestly — it's tight. Key implications:</p>
+    <ul>
+        <li>The 95% confidence interval on our 0.81 AUC is roughly <strong>±0.03–0.04</strong></li>
+        <li>V11 (0.8013) vs V12 (0.8098) are likely <em>not</em> statistically distinguishable — we chased noise in those final iterations</li>
+        <li>The large jumps (baseline→V2, V2→V7) are real; the marginal improvements (<0.01) are uncertain</li>
+        <li>The model <em>works</em> — but expansion of ground truth is the highest-ROI next step</li>
+    </ul>
+
+    <!-- SECTION 6 -->
+    <h2 id="fuzzy">6. Fuzzy Matching Experiment</h2>
+
+    <p>We attempted to expand ground truth from 181 → 720+ labels by fuzzy-matching the 74,241 no-NPI LEIE entries against NPPES using <code>last_name + state + specialty</code>.</p>
+
+    <h3>Results</h3>
+    <table>
+        <tr><th>Match Confidence</th><th>Total Matched</th><th>In CMS</th><th>AUC Impact</th></tr>
+        <tr><td>HIGH (exact name + state + taxonomy + credentials)</td><td>287</td><td>44</td><td rowspan="2"><span class="tag tag-red">0.81→0.75 (AUC dropped)</span></td></tr>
+        <tr><td>MEDIUM (first initial match)</td><td>1,709</td><td>~495</td></tr>
+        <tr><td>LOW (ambiguous, first pick)</td><td>1,454</td><td>~513</td><td>Not tested</td></tr>
+    </table>
+
+    <h3>Why Did AUC Drop?</h3>
+
+    <div class="finding-box">
+        <strong>Score Distribution Reveals the Problem</strong>
+        <ul>
+            <li>LEIE-exact positives: mean score = 0.674, median = <strong>1.000</strong> → model correctly flags them HIGH</li>
+            <li>Fuzzy-new positives: mean score = 0.217, median = 0.122 → model scores them like <em>normal providers</em></li>
+        </ul>
+    </div>
+
+    <p>Investigation revealed: the fuzzy-matched providers were excluded in <strong>1995–2010</strong> — 20-30 years ago. Their current billing patterns are completely normal (they may have been reinstated, or the NPI was reassigned). Adding them as fraud labels teaches the model the wrong thing. The old LEIE entries without NPIs are not worth adding.</p>
+
+    <p><strong>What would actually help:</strong> DOJ press releases (OIG publishes ~100/month with specific provider names), CMS Program Integrity dataset, state medical board disciplinary actions.</p>
+
+    <!-- SECTION 7 -->
+    <h2 id="feature-importance">7. Feature Importance Analysis</h2>
+
+    <table>
+        <tr><th>Subscore</th><th>Standalone AUC</th><th>Notes</th></tr>
+        <tr><td>PECOS enrollment gap</td><td><strong>0.7778</strong></td><td>⚠️ Mostly post-exclusion leakage — floods list with wrong suspects</td></tr>
+        <tr><td>Drug cost/beneficiary</td><td>0.5756</td><td>Moderate — specialty-normalized drug spend</td></tr>
+        <tr><td>Services/beneficiary</td><td>0.5678</td><td>Moderate — the key billing anomaly signal</td></tr>
+        <tr><td>Payment/beneficiary</td><td>0.5549</td><td>Correlated with svc/bene</td></tr>
+        <tr><td>Open Payments (industry $)</td><td>0.5379</td><td>Weak individually</td></tr>
+        <tr><td>LA opioid rate</td><td>0.4617</td><td>Below random standalone — only adds value in the max pool</td></tr>
+        <tr><td><strong>Combined max(subscores)</strong></td><td><strong>0.8072</strong></td><td>The ensemble effect — each feature catches different fraudsters</td></tr>
+    </table>
+
+    <p>The ensemble effect is the whole game. No single signal is powerful, but they catch <em>different</em> fraudsters. That's exactly why <code>max()</code> works: it asks "is this provider extreme on <em>anything?</em>" rather than "is this provider above average on <em>everything?</em>"</p>
+
+    <!-- SECTION 8 -->
+    <h2 id="suspects">8. Top Suspect List — Physicians Only</h2>
+
+    <p>After removing PECOS-dominated results and filtering to individual physicians (removing ambulance services, labs, IDTFs), the top billing anomaly suspects:</p>
+
+    <table>
+        <tr><th>Rank</th><th>Provider</th><th>Specialty</th><th>Location</th><th>Key Metric</th><th>Why Flagged</th></tr>
+        <tr>
+            <td>1</td>
+            <td><strong>Andrew Leavitt</strong><br>NPI 1952343113</td>
+            <td>Internal Medicine</td>
+            <td>San Francisco, CA</td>
+            <td><strong>10,333 svc/bene</strong><br>2.5M services, 246 patients<br>$4.76M paid</td>
+            <td><span class="tag tag-red">Extreme — implausible</span></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><strong>Elisabeth Balken</strong><br>NPI 1992489728</td>
+            <td>Nurse Practitioner</td>
+            <td>Mesa, AZ</td>
+            <td><strong>991 svc/bene</strong><br>29,734 services, 30 patients<br>$23.3M paid</td>
+            <td><span class="tag tag-red">Extreme — NP billing $23M</span></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><strong>William Price</strong><br>NPI 1366423865</td>
+            <td>Family Practice</td>
+            <td>Tulsa, OK</td>
+            <td><strong>2,357 svc/bene</strong><br>120K services, 51 patients<br>$29,870 paid</td>
+            <td><span class="tag tag-red">Very high volume, very low payment — data anomaly?</span></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><strong>Brandon Hardesty</strong><br>NPI 1952581027</td>
+            <td>Internal Medicine</td>
+            <td>Indianapolis, IN</td>
+            <td><strong>5,634 svc/bene</strong><br>766K services, 136 patients<br>LA opioid: HIGH</td>
+            <td><span class="tag tag-yellow">Likely IU Health hematology</span></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td><strong>Frank Curvin</strong><br>NPI 1457397382</td>
+            <td>Family Practice</td>
+            <td>Johns Creek, GA</td>
+            <td><strong>191 svc/bene</strong><br>19,932 services, 104 patients<br>$11.8M paid</td>
+            <td><span class="tag tag-red">High for family practice</span></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td><strong>Joyce Ravain</strong><br>NPI 1215980230</td>
+            <td>Emergency Medicine</td>
+            <td>Ormond Beach, FL</td>
+            <td><strong>92.9 svc/bene</strong><br>4,181 services, 45 patients<br>$835K paid</td>
+            <td><span class="tag tag-red">EM docs don't have ongoing patients</span></td>
+        </tr>
+    </table>
+
+    <div class="alert alert-yellow">
+        <strong>⚠️ Important Caveat</strong>
+        High scores ≠ fraud. Our earlier web research confirmed that similar patterns (Indianapolis cluster, oncology infusion centers) can be completely legitimate. These suspects require human review + web research before any conclusions.
+    </div>
+
+    <!-- SECTION 9 -->
+    <h2 id="validation">9. LLM Web Validation Pipeline</h2>
+
+    <p>Built <code>validate_suspects.py</code> — a batch pipeline that takes the physician suspect list and for each provider:</p>
+
+    <ol>
+        <li>Builds 3–5 targeted search queries (OIG news, medical board, fraud indictment, settlement)</li>
+        <li>Calls <strong>Brave Search API</strong> (3 searches × 3 results = up to 9 unique sources per provider)</li>
+        <li>Feeds CMS data context + search results to <strong>Claude (claude-haiku)</strong> for structured analysis</li>
+        <li>Returns structured JSON: <code>verdict | fraud_confidence | fraud_indicators | legitimate_explanations | recommended_action</code></li>
+        <li>Generates styled HTML report with color-coded verdicts</li>
+    </ol>
+
+    <h3>Verdict Categories</h3>
+    <table>
+        <tr><th>Verdict</th><th>Meaning</th><th>Action</th></tr>
+        <tr><td><span class="tag tag-red">LIKELY_FRAUD</span></td><td>Web evidence of legal action, conviction, or OIG press release</td><td>Refer to OIG, request claims audit</td></tr>
+        <tr><td><span class="tag tag-yellow">POSSIBLE_FRAUD</span></td><td>Statistical anomaly + suspicious patterns but no confirmed legal action</td><td>Enhanced monitoring, deeper audit</td></tr>
+        <tr><td><span class="tag tag-green">LEGITIMATE</span></td><td>High-volume specialty center, academic medicine, specialty drug</td><td>Remove from watchlist</td></tr>
+        <tr><td><span class="tag tag-blue">INSUFFICIENT_DATA</span></td><td>No web presence, new provider, generic name</td><td>Manual review needed</td></tr>
+    </table>
+
+    <h3>To Activate</h3>
+    <pre>
+# On Hetzner server:
+export BRAVE_API_KEY=...       # free tier at https://brave.com/search/api/
+export ANTHROPIC_API_KEY=...
+
+# Run top 25 suspects:
+cd /home/dataops/fraud-detector
+python3 validate_suspects.py --limit 25
+
+# Output:
+# validation/validation_report_2026-03-09.html  (HTML report)
+# validation/validation_results.json            (structured data)</pre>
+
+    <hr class="section-divider">
+
+    <!-- SECTION 10 -->
+    <h2 id="next-steps">10. Next Steps — Prioritized</h2>
+
+    <table>
+        <tr><th>Priority</th><th>Task</th><th>Expected Impact</th></tr>
+        <tr>
+            <td><span class="tag tag-red">P0</span></td>
+            <td>Set API keys on server, run validation pipeline on top 25 suspects</td>
+            <td>First real-world validated fraud findings</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-red">P0</span></td>
+            <td>Investigate Andrew Leavitt (10,333 svc/bene), Elisabeth Balken ($23M on 30 patients)</td>
+            <td>May be our clearest fraud signals</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-yellow">P1</span></td>
+            <td>Expand ground truth via DOJ press releases — OIG publishes ~100/month with provider names</td>
+            <td>Could grow labels from 181 → 1,000+</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-yellow">P1</span></td>
+            <td>Build frontend explorer (FastAPI + React) for interactive provider investigation</td>
+            <td>Makes the validation workflow usable by others</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-blue">P2</span></td>
+            <td>Add network analysis — referral rings where A→B→C→kickback→A</td>
+            <td>New fraud pattern not currently detected</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-blue">P2</span></td>
+            <td>Write 3-part blog post series for personal website</td>
+            <td>Content marketing / credibility for venture</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-gray">P3</span></td>
+            <td>Train proper ML model (gradient boosting) using hand-crafted features as inputs</td>
+            <td>May push AUC past 0.85 with proper cross-validation</td>
+        </tr>
+    </table>
+
+    <hr class="section-divider">
+
+    <h2>Repository & Files</h2>
+    <table>
+        <tr><th>File</th><th>Purpose</th><th>Location</th></tr>
+        <tr><td><code>eval.py</code></td><td>Fixed oracle — do not modify</td><td>Server + <a href="https://github.com/blakethom8/cms-fraud-detection">GitHub</a></td></tr>
+        <tr><td><code>detector.py</code></td><td>Fraud scoring logic (V15 final)</td><td>Server + GitHub</td></tr>
+        <tr><td><code>feature_importance.py</code></td><td>Subscore AUC + top suspect generation</td><td>Server + GitHub</td></tr>
+        <tr><td><code>fuzzy_match.py</code></td><td>LEIE name matching against NPPES</td><td>Server + GitHub</td></tr>
+        <tr><td><code>validate_suspects.py</code></td><td>LLM web validation pipeline</td><td>Server + GitHub</td></tr>
+        <tr><td><code>physician_suspects.csv</code></td><td>Top 100 physician billing suspects</td><td>Server + GitHub</td></tr>
+        <tr><td><code>results.tsv</code></td><td>Full AUC experiment log (18 runs)</td><td>Server + GitHub</td></tr>
+        <tr><td><code>reports/2026-03-09_fraud-detection-comprehensive.html</code></td><td>Public-facing summary report</td><td><a href="https://blakethom8.github.io/mobile-reports/2026-03-09_fraud-detection-comprehensive.html">Mobile URL</a></td></tr>
+    </table>
+
+    <hr class="section-divider">
+
+    <p class="citation">
+        <strong>Session:</strong> March 8–9, 2026 (~6 hours) &nbsp;|&nbsp;
+        <strong>GitHub:</strong> <a href="https://github.com/blakethom8/cms-fraud-detection">blakethom8/cms-fraud-detection</a> &nbsp;|&nbsp;
+        <strong>Server:</strong> Hetzner 5.78.148.70 &nbsp;|&nbsp;
+        <strong>Data:</strong> All CMS data publicly available at data.cms.gov
+    </p>
+
+</div>
+</body>
+</html>
