@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Fraud Validation Report — 2026-03-09</title>
+  <style>
+    body {font-family:Georgia,serif;background:#f7fafc;color:#2d3748;margin:0;padding:0}
+    .header {background:#1a365d;color:white;padding:1.5rem}
+    .header h1 {margin:0;font-size:1.6rem}
+    .container {max-width:1000px;margin:0 auto;padding:1.5rem}
+    ul {margin:0.25rem 0;padding-left:1.25rem}
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🔬 Healthcare Fraud Validation Report</h1>
+    <div style="opacity:0.85;margin-top:0.5rem">
+      Generated: 2026-03-09 04:30 &nbsp;|&nbsp;
+      Providers analyzed: 25 &nbsp;|&nbsp; <strong>LIKELY_FRAUD:</strong> 22 &nbsp;|&nbsp; <strong>POSSIBLE_FRAUD:</strong> 3
+    </div>
+  </div>
+  <div class="container">
+    <div style="background:white;border:1px solid #e2e8f0;border-radius:6px;
+                padding:1rem;margin:1rem 0;font-size:0.9rem">
+      <strong>How this works:</strong> Each provider is scored by our CMS fraud detection model,
+      then web-searched and analyzed by Claude AI to distinguish billing anomalies (potentially
+      legitimate) from actual fraud indicators (news coverage, legal actions, OIG press releases,
+      state medical board actions). This is a <em>research tool</em>, not a legal determination.
+    </div>
+    
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Joyce Ravain</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1215980230 &nbsp;|&nbsp; Emergency Medicine
+                &nbsp;|&nbsp; Ormond Beach, FL
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:119px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.998</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:59px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.493</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:89px;height:10px;
+                background:#d69e2e;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.744</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:43px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.360</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 45 benes &nbsp;|&nbsp;
+                4,181 services &nbsp;|&nbsp;
+                $835,750 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Dr. Joyce Ravain exhibits concerning billing patterns, with extremely high Medicare services and payments per beneficiary, suggesting potential fraud. Although her specialty may involve high patient traffic, the level of billing is disproportionate to industry norms, raising significant red flags.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme billing volume with 92.9 services per beneficiary.</li><li>Excess Medicare payments totaling $835,750, leading to a high payment per beneficiary.</li><li>High drug cost per beneficiary, indicating potential misuse or unnecessary prescriptions.</li></ul></div>
+              <div><strong style="font-size:0.8rem;color:#276749">✓ Legitimate Explanations:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Emergency medicine providers often deal with a high volume of patients, which could justify higher services per beneficiary.</li><li>Dr. Ravain's 47 years of experience may contribute to high patient turnover and a more extensive treatment approach.</li></ul></div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit to verify the appropriateness of billing patterns and examine service documentation.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Nicholas Lacorte</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1134556582 &nbsp;|&nbsp; Licensed Clinical Social Worker
+                &nbsp;|&nbsp; Toms River, NJ
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:66px;height:10px;
+                background:#d69e2e;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.552</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:62px;height:10px;
+                background:#d69e2e;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.519</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:60px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.500</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:45px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.376</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 28 benes &nbsp;|&nbsp;
+                403 services &nbsp;|&nbsp;
+                $20,632 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">The provider's drug cost per beneficiary is exceptionally high, indicating potential overprescription or inappropriate billing practices. The total number of services provided and payments received also suggest unusual billing patterns relative to peers in the same specialty.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme drug spending per beneficiary (1.000)</li><li>Excessive total Medicare payments ($20,632 for 28 beneficiaries)</li><li>High services per beneficiary (14.4) indicating potential overutilization</li></ul></div>
+              <div><strong style="font-size:0.8rem;color:#276749">✓ Legitimate Explanations:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Provider may serve a high-complexity patient population requiring intensive therapy and medication management</li><li>Possible dual role as Clinical Social Worker and Psychiatric Nurse Practitioner could justify higher prescription costs</li></ul></div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit to review billing practices, particularly regarding prescribed medications and services rendered.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Darnell Blackmon</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1831150655 &nbsp;|&nbsp; Orthopedic Surgery
+                &nbsp;|&nbsp; Tulsa, OK
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:115px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.965</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:58px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.490</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:67px;height:10px;
+                background:#d69e2e;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.561</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:42px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.358</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 50 benes &nbsp;|&nbsp;
+                4,227 services &nbsp;|&nbsp;
+                $3,233,221 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Dr. Darnell Blackmon displays extraordinarily high service and payment metrics compared to typical orthopedic surgeons, raising significant concerns about potential billing fraud. Additionally, ongoing legal challenges for malpractice further underscore the need for scrutiny.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme billing volume: 84.5 services per beneficiary, significantly higher than the average.</li><li>Excess Medicare payments: $3,233,221 total payments for only 50 beneficiaries, indicating potential overutilization or unbundling.</li><li>Legal action for malpractice, suggesting a pattern of questionable medical practices.</li></ul></div>
+              <div><strong style="font-size:0.8rem;color:#276749">✓ Legitimate Explanations:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Specialty type in orthopedic surgery, which often involves higher volumes of procedures and associated costs.</li><li>Potentially complex patient population requiring numerous visits and interventions.</li></ul></div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Andrew Leavitt</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1952343113 &nbsp;|&nbsp; Internal Medicine
+                &nbsp;|&nbsp; San Francisco, CA
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:119px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:55px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.462</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:106px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.891</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:67px;height:10px;
+                background:#d69e2e;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.562</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 246 benes &nbsp;|&nbsp;
+                2,541,972 services &nbsp;|&nbsp;
+                $4,756,763 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Dr. Andrew Leavitt exhibits highly alarming billing patterns, with services rendered per beneficiary being significantly above the national average. Additionally, the overall Medicare payments alongside drug costs raise suspicion of potential fraudulent activity.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme billing volume: 10,333.2 services per beneficiary</li><li>High Medicare payments: $4,756,763 for 246 beneficiaries</li><li>Extreme drug spending: high drug cost per beneficiary at 0.891</li></ul></div>
+              
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Frank Curvin</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1457397382 &nbsp;|&nbsp; Family Practice
+                &nbsp;|&nbsp; Johns Creek, GA
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:119px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.993</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:54px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.453</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:54px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.458</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:31px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.259</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 104 benes &nbsp;|&nbsp;
+                19,932 services &nbsp;|&nbsp;
+                $11,844,171 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Dr. Frank Curvin's billing patterns show an extremely high volume of services provided to his Medicare beneficiaries, indicating potential overbilling or inappropriate billing practices. Given the total payments and services per beneficiary, it suggests that there may be systemic issues with the way services are documented or billed.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extremely high services per beneficiary (191.7 services per beneficiary)</li><li>Total Medicare payments exceeding $11 million, with a high payment per beneficiary</li><li>Fraud Score of 1.000 / 1.000 indicating the highest potential risk level</li></ul></div>
+              
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit to further investigate billing practices and patient services provided.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fffff0;border:1px solid #d69e2e;border-left:5px solid #d69e2e;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#d69e2e;margin:0">⚠️ Kenneth Wright</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1578650990 &nbsp;|&nbsp; Ophthalmology
+                &nbsp;|&nbsp; Los Angeles, CA
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#d69e2e">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#d69e2e;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">POSSIBLE_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:56px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.472</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:57px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.481</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:60px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.500</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:33px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.281</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 106 benes &nbsp;|&nbsp;
+                369 services &nbsp;|&nbsp;
+                $47,860 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (MEDIUM confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Dr. Wright's provider profile shows extremely high drug costs per beneficiary, leading to a fraud score of 1.000. This raises red flags, though the nature of his specialty and his considerable experience may provide legitimate explanations for the billing patterns.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme drug spending per beneficiary indicated by a fraud score of 1.000.</li><li>Provider has a high Medicare service utilization with an average of 3.5 services per beneficiary, which may warrant further investigation.</li></ul></div>
+              <div><strong style="font-size:0.8rem;color:#276749">✓ Legitimate Explanations:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Dr. Kenneth Wright specializes in ophthalmology, which may involve high-cost medications for conditions requiring such treatments.</li><li>The provider has significant experience in his field, which may contribute to higher service counts and drug expenditures.</li></ul></div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #d69e2e">
+                <strong>Recommended Action:</strong> Request claims audit to review drug spending and billing practices.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Elisabeth Balken</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1992489728 &nbsp;|&nbsp; Nurse Practitioner
+                &nbsp;|&nbsp; Mesa, AZ
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:116px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.970</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:56px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.472</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:57px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.477</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 30 benes &nbsp;|&nbsp;
+                29,734 services &nbsp;|&nbsp;
+                $23,285,464 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">The provider exhibits an unusually high volume of services and payments per beneficiary, indicating potential billing anomalies. There are no identified legitimate explanations for the elevated metrics, raising concerns about the legitimacy of the claims.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme billing volume with 29,734 services provided for only 30 beneficiaries, averaging 991.1 services per beneficiary.</li><li>Total Medicare payments of $23,285,464 indicate excessive billing compared to peers.</li><li>No open payments reported, which could suggest avoidance of scrutiny related to industry payments.</li></ul></div>
+              
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Christy Hatcher</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1427004050 &nbsp;|&nbsp; Certified Registered Nurse Anesthetist (
+                &nbsp;|&nbsp; Coon Rapids, MN
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:119px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:59px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.497</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:59px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.498</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 23 benes &nbsp;|&nbsp;
+                1,765 services &nbsp;|&nbsp;
+                $83,002 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">The provider exhibits a highly unusual billing pattern with an average of 76.7 services per beneficiary, indicating potential overbilling. The combination of extreme service volume and total payments raises significant concerns about the legitimacy of the billed services.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme billing volume: 76.7 services per beneficiary indicates unusually high frequency of services provided.</li><li>Total Medicare payments of $83,002 with only 23 beneficiaries suggests potential overbilling or unnecessary services.</li></ul></div>
+              <div><strong style="font-size:0.8rem;color:#276749">✓ Legitimate Explanations:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>As a certified registered nurse anesthetist (CRNA), high service volume could be justified if working in a high-demand, high-complexity medical environment.</li><li>Potentially treating a specific patient population that requires more frequent anesthesia services may account for the high volume.</li></ul></div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Brandon Hardesty</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1952581027 &nbsp;|&nbsp; Internal Medicine
+                &nbsp;|&nbsp; Indianapolis, IN
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:119px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:112px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.938</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:63px;height:10px;
+                background:#d69e2e;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.530</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:66px;height:10px;
+                background:#d69e2e;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.554</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 136 benes &nbsp;|&nbsp;
+                766,256 services &nbsp;|&nbsp;
+                $3,469,268 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Dr. Brandon Hardesty exhibits highly atypical billing patterns characteristic of fraud, including an extraordinarily high services per beneficiary rate and significant payments per beneficiary. The high opioid prescribing rate raises concerns about the nature of the practices engaged in.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme billing volume with services per beneficiary at 5634.2</li><li>Excess Medicare payments totaling $3,469,268</li><li>High long-acting opioid prescribing rate of 0.938, indicative of potential pill mill activity</li></ul></div>
+              
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 William Price</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1366423865 &nbsp;|&nbsp; Family Practice
+                &nbsp;|&nbsp; Tulsa, OK
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:63px;height:10px;
+                background:#d69e2e;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.529</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:54px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.453</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:48px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.405</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 51 benes &nbsp;|&nbsp;
+                120,229 services &nbsp;|&nbsp;
+                $29,870 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Dr. William Price exhibits an extremely high volume of services billed per beneficiary, significantly exceeding typical levels for family practice. This pattern raises serious concerns about the legitimacy of the services being provided.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme billing volume with 2357.4 services per beneficiary</li><li>Total Medicare services of 120,229 for 51 beneficiaries, indicating potential over-treatment or billing for unnecessary services</li></ul></div>
+              
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit to review billing practices and patient care documentation.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Frederick Sabido</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1811992308 &nbsp;|&nbsp; General Surgery
+                &nbsp;|&nbsp; Staten Island, NY
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:76px;height:10px;
+                background:#d69e2e;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.637</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:59px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.494</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:59px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.492</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:66px;height:10px;
+                background:#d69e2e;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.551</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 223 benes &nbsp;|&nbsp;
+                964,514 services &nbsp;|&nbsp;
+                $405,551 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Dr. Frederick Sabido's billing patterns show an unusually high volume of services per beneficiary, which raises significant concern for potential fraudulent activities. Additionally, while legitimate explanations exist due to his surgical specialty, the combination of high service volume and payments indicates a strong likelihood of billing fraud.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme services per beneficiary (4325.2 services/beneficiary) which is substantially above the national average for general surgery</li><li>Total Medicare payments ($405,551) are high compared to the average for similar specialties and patient populations</li><li>Moderate industry payments ($9,673) suggesting potential financial incentives from pharmaceutical/device companies</li></ul></div>
+              <div><strong style="font-size:0.8rem;color:#276749">✓ Legitimate Explanations:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Specialty in surgical oncology and robotic surgery may lead to a higher volume of procedures</li><li>Possible practicing in an area with a higher prevalence of surgical needs, although this needs further investigation</li></ul></div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Bethany Jameson</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1225551484 &nbsp;|&nbsp; Nurse Practitioner
+                &nbsp;|&nbsp; Gilbert, AZ
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:112px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.940</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:56px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.472</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:57px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.477</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:20px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.173</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 64 benes &nbsp;|&nbsp;
+                50,592 services &nbsp;|&nbsp;
+                $50,178,530 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">The provider, Bethany Jameson, is facing serious legal accusations with a federal indictment tied to significant Medicare fraud, which is corroborated by alarming billing statistics. The extremely high number of services billed per beneficiary and total payments further point towards a pattern consistent with fraudulent activity rather than legitimate medical practice.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme billing volume: 790.5 services per beneficiary</li><li>Excess Medicare payments: $50,178,530 with high payments per beneficiary</li><li>Federal indictment for conspiracy to commit wire fraud involving $71 million in false claims from Medicare</li><li>Involvement in applying medically unnecessary treatments to Medicare patients</li></ul></div>
+              
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Refer to OIG
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 William Barnhill</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1659827129 &nbsp;|&nbsp; Certified Registered Nurse Anesthetist (
+                &nbsp;|&nbsp; Lafayette, LA
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:58px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.491</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:49px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.410</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:113px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.945</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 284 benes &nbsp;|&nbsp;
+                293 services &nbsp;|&nbsp;
+                $22,251 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Provider William Barnhill has been flagged for a 1.000 prescribing rate of long-acting opioids, which is significantly high, suggesting potential pill mill activities. Additionally, the drug cost per beneficiary is also elevated, confirming concerns about extreme drug expenditures.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Long-acting opioid prescribing rate at 1.000, indicating a potential pill mill</li><li>Drug cost per beneficiary at 0.945, suggesting extreme drug spending</li></ul></div>
+              
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Albert Zant</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1235184045 &nbsp;|&nbsp; Anesthesiology
+                &nbsp;|&nbsp; Fort Walton Beach, FL
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:119px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:57px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.478</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:67px;height:10px;
+                background:#d69e2e;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.561</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 25 benes &nbsp;|&nbsp;
+                4,081 services &nbsp;|&nbsp;
+                $484,324 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Dr. Albert Zant's billing patterns exhibit extreme service volume and excessive payments per beneficiary, strongly indicating potential fraud. Despite his extensive experience, the metrics suggest a concerning level of service provision that does not align with typical anesthesiology practices.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme billing volume with 4,081 services for only 25 beneficiaries, averaging 163.2 services per beneficiary.</li><li>Excess Medicare payments totaling $484,324 for the same patient population, indicating high payment per beneficiary.</li><li>No Open Payments reported, suggesting potential undisclosed financial relationships.</li></ul></div>
+              <div><strong style="font-size:0.8rem;color:#276749">✓ Legitimate Explanations:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Dr. Zant has 57 years of experience in anesthesiology, which may contribute to higher treatment volumes.</li><li>As an anesthesiologist, he may be involved in a variety of surgical procedures that require more services.</li></ul></div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Michael Morris</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1437492238 &nbsp;|&nbsp; Diagnostic Radiology
+                &nbsp;|&nbsp; Glen Burnie, MD
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:119px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:59px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.498</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:61px;height:10px;
+                background:#d69e2e;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.511</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:45px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.378</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 454 benes &nbsp;|&nbsp;
+                73,156 services &nbsp;|&nbsp;
+                $12,077,610 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Dr. Michael Morris exhibits alarming billing patterns indicative of potential fraud, including extremely high service volume and payments per beneficiary. Additionally, there is a documented history of misconduct related to healthcare service utilization.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme billing volume with 161.1 services per beneficiary.</li><li>Excessive Medicare payments totaling $12,077,610 for 454 beneficiaries.</li><li>Previous disciplinary action for grossly overutilizing healthcare services.</li></ul></div>
+              
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Khan Nedd</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1043284219 &nbsp;|&nbsp; Internal Medicine
+                &nbsp;|&nbsp; Grand Rapids, MI
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:103px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.860</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:114px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.955</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:55px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.462</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:38px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.321</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 93 benes &nbsp;|&nbsp;
+                22,325 services &nbsp;|&nbsp;
+                $332,820 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Dr. Khan Nedd has an extremely high number of services billed per beneficiary and total payments, raising concerns about the validity of these claims. The drug cost per beneficiary is particularly alarming, suggesting potential overprescribing or inappropriate billing practices.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme billing volume: 240.1 services per beneficiary</li><li>Excess Medicare payments: $332,820 total payments</li><li>Extreme drug spending, driving fraud signal with a score of 1.000</li></ul></div>
+              <div><strong style="font-size:0.8rem;color:#276749">✓ Legitimate Explanations:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Specialty of internal medicine may involve higher patient complexity</li><li>Possible higher patient volume due to being affiliated with multiple hospitals</li></ul></div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Arlene Bautista</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1285292334 &nbsp;|&nbsp; Nurse Practitioner
+                &nbsp;|&nbsp; Tucson, AZ
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:115px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.958</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:56px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.472</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:57px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.477</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 24 benes &nbsp;|&nbsp;
+                21,559 services &nbsp;|&nbsp;
+                $16,850,296 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">The provider exhibits an extremely high volume of services billed per beneficiary, suggesting potential exploitation of the Medicare system. The total payments received are significantly above average for the specialty, raising further suspicion.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme billing volume: 21,559 services for 24 beneficiaries, resulting in 898.3 services per beneficiary</li><li>Excess Medicare payments totaling $16,850,296 for the small number of beneficiaries</li></ul></div>
+              
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fffff0;border:1px solid #d69e2e;border-left:5px solid #d69e2e;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#d69e2e;margin:0">⚠️ Yelena Ginzburg</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1407946247 &nbsp;|&nbsp; Internal Medicine
+                &nbsp;|&nbsp; New York, NY
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#d69e2e">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#d69e2e;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">POSSIBLE_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:59px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.492</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:58px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.485</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:55px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.462</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:69px;height:10px;
+                background:#d69e2e;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.583</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 31 benes &nbsp;|&nbsp;
+                84 services &nbsp;|&nbsp;
+                $7,452 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (MEDIUM confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Dr. Yelena Ginzburg has been flagged for extreme drug spending per beneficiary, which is a potential red flag. However, her specialty and affiliation with an academic center might justify high drug costs due to the nature of her patient population and treatment requirements.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme drug spending per beneficiary (1.000)</li><li>Moderate industry payments ($16,485 from pharma/device companies)</li></ul></div>
+              <div><strong style="font-size:0.8rem;color:#276749">✓ Legitimate Explanations:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Dr. Ginzburg practices in a high-complexity specialty (hematology, oncology) which may involve expensive treatment regimens.</li><li>Affiliation with a prestigious academic medical center (Mount Sinai) that may influence both the complexity and cost of patient care.</li></ul></div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #d69e2e">
+                <strong>Recommended Action:</strong> Request claims audit to investigate specific drug billing patterns and treatment justifications.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fffff0;border:1px solid #d69e2e;border-left:5px solid #d69e2e;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#d69e2e;margin:0">⚠️ Heidi Jacobe</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1225097538 &nbsp;|&nbsp; Dermatology
+                &nbsp;|&nbsp; Dallas, TX
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#d69e2e">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#d69e2e;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">POSSIBLE_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:54px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.451</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:59px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.498</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:57px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.477</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:67px;height:10px;
+                background:#d69e2e;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.562</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 130 benes &nbsp;|&nbsp;
+                432 services &nbsp;|&nbsp;
+                $47,475 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Dr. Heidi Jacobe has a high fraud score primarily due to an elevated long-acting opioid prescribing rate, which is unusual for a dermatologist. Despite her academic credentials and hospital affiliations, the prescribing pattern raises concerns.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>High rate of long-acting opioid prescribing indicating potential pill mill activity</li><li>Moderate level of industry payments which could indicate financial incentives</li></ul></div>
+              <div><strong style="font-size:0.8rem;color:#276749">✓ Legitimate Explanations:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Dr. Jacobe is a dermatologist with 29 years of experience, who may treat patients with complex dermatological conditions that could involve pain management.</li><li>Affiliations with major hospitals and academic centers may contribute to higher patient complexity.</li></ul></div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #d69e2e">
+                <strong>Recommended Action:</strong> Request claims audit to investigate opioid prescribing patterns and review patient demographics.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Lisa Jenike</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1326475633 &nbsp;|&nbsp; Nurse Practitioner
+                &nbsp;|&nbsp; Springfield, MA
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:59px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.496</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:59px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.495</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:56px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.472</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 22 benes &nbsp;|&nbsp;
+                38 services &nbsp;|&nbsp;
+                $2,670 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">The provider shows extremely high drug spending patterns relative to a small beneficiary pool, resulting in an alarming fraud score. Additionally, the low number of services per beneficiary and total Medicare payments suggest potential overutilization or inappropriate billing practices.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme drug spending per beneficiary with a score of 1.000</li><li>High total drug cost compared to average profiles for similar providers</li></ul></div>
+              <div><strong style="font-size:0.8rem;color:#276749">✓ Legitimate Explanations:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>As a nurse practitioner, may have a specialized focus that necessitates higher drug costs.</li><li>Potentially treating a high-complexity patient population which may require expensive medications.</li></ul></div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit to investigate billing practices and prescription patterns.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Jenna Butner</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1316258775 &nbsp;|&nbsp; Family Practice
+                &nbsp;|&nbsp; New Haven, CT
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:56px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.474</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:58px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.487</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:118px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.984</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 39 benes &nbsp;|&nbsp;
+                82 services &nbsp;|&nbsp;
+                $5,202 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Dr. Jenna Butner exhibits alarming prescribing patterns, particularly concerning opioids and drug spending. Though her specialty could explain some of these figures, the extremity of the metrics strongly suggests a higher likelihood of fraudulent activity.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>High long-acting opioid prescribing rate (0.984), indicating potential pill mill activity.</li><li>Extreme drug cost per beneficiary (1.000), suggesting unusually high drug spending.</li></ul></div>
+              <div><strong style="font-size:0.8rem;color:#276749">✓ Legitimate Explanations:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>The specialty of family practice may involve treating patients with chronic pain, potentially justifying high opioid prescriptions.</li><li>Medical practice may serve a high-complexity patient population requiring extensive medication management.</li></ul></div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit to evaluate prescribing patterns and billing practices.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Melissa Rademacher</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1407856651 &nbsp;|&nbsp; Certified Registered Nurse Anesthetist (
+                &nbsp;|&nbsp; West Des Moines, IA
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:119px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.999</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:59px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.497</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:36px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.301</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 25 benes &nbsp;|&nbsp;
+                397 services &nbsp;|&nbsp;
+                $223,530 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Melissa Rademacher's billing practices show significantly elevated service and payment metrics compared to typical standards for CRNAs. The combination of extreme billing volume and high payments per beneficiary suggests potential fraudulent activity.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme billing volume with 397 services for only 25 beneficiaries, leading to an average of 15.9 services per beneficiary.</li><li>Excess Medicare payments with a total of $223,530, indicating high payment per beneficiary as flagged.</li><li>High drug cost per beneficiary, although specific drug cost details were not provided.</li></ul></div>
+              
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit to investigate the billing practices and service necessity for the flagged services.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Sherman Washington</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1396893202 &nbsp;|&nbsp; Emergency Medicine
+                &nbsp;|&nbsp; Winnetka, CA
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:107px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.895</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:59px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.493</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:57px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.478</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:42px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.353</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 116 benes &nbsp;|&nbsp;
+                3,712 services &nbsp;|&nbsp;
+                $2,206,926 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Dr. Sherman Washington has an extremely high service volume per beneficiary and excessive Medicare payments compared to industry norms, raising significant concerns regarding billing practices. Despite the potential for legitimate reasons related to specialty and patient complexity, the indicators strongly suggest fraudulent activity.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>High services per beneficiary (32.0)</li><li>Total payments significantly high ($2,206,926) for the number of beneficiaries (116)</li><li>Maximum fraud score (1.000) indicating extreme billing concerns</li></ul></div>
+              <div><strong style="font-size:0.8rem;color:#276749">✓ Legitimate Explanations:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>As an emergency medicine physician, high billing volume could be attributed to seeing a high number of complex emergency cases.</li><li>Potentially treating a concentrated population with diverse health issues that necessitate frequent visits.</li></ul></div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Gabrielle Rocque</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1598965972 &nbsp;|&nbsp; Diagnostic Radiology
+                &nbsp;|&nbsp; Birmingham, AL
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:58px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.483</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:69px;height:10px;
+                background:#d69e2e;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.579</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:119px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:49px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.413</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 53 benes &nbsp;|&nbsp;
+                155 services &nbsp;|&nbsp;
+                $15,103 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Dr. Gabrielle Rocque has a notably high long-acting opioid prescribing rate, suggesting potential concerns regarding inappropriate prescribing practices characteristic of pill mills. Additionally, her high drug cost per beneficiary indicates excessive spending patterns that warrant further scrutiny.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Payment per beneficiary (excess Medicare payments): 0.579 (moderate)</li><li>Long-acting opioid prescribing rate: 1.000 (HIGH)</li><li>Drug cost per beneficiary: 1.000 (HIGH)</li></ul></div>
+              <div><strong style="font-size:0.8rem;color:#276749">✓ Legitimate Explanations:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Specializing in diagnostic radiology may lead to higher imaging costs.</li><li>The provider may treat a high-complexity patient population requiring more imaging and potentially higher drug prescriptions.</li></ul></div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit to investigate prescribing patterns and billing practices.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff5f5;border:1px solid #c53030;border-left:5px solid #c53030;
+                    border-radius:6px;margin:1.5rem 0;padding:1.25rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3 style="color:#c53030;margin:0">🚨 Jason Deutsch</h3>
+              <div style="color:#4a5568;font-size:0.9rem;margin-top:0.25rem">
+                NPI: 1285665141 &nbsp;|&nbsp; Emergency Medicine
+                &nbsp;|&nbsp; New York, NY
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:1.6rem;font-weight:bold;color:#c53030">1.000</div>
+              <div style="font-size:0.75rem;color:#4a5568">Fraud Score</div>
+              <div style="margin-top:0.25rem"><span style="background:#c53030;color:white;
+                padding:2px 8px;border-radius:12px;font-size:0.8rem">LIKELY_FRAUD</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">CMS Signal Scores</strong>
+              
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Services per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Payment per beneficiary</span>
+              <span style="display:inline-block;width:120px;height:10px;
+                background:#c53030;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">1.000</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Long-acting opioid prescribing rate</span>
+              <span style="display:inline-block;width:59px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.493</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Drug cost per beneficiary</span>
+              <span style="display:inline-block;width:57px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.478</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">Industry payments</span>
+              <span style="display:inline-block;width:38px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.321</span>
+            </div>
+            <div style="margin:4px 0;font-size:0.8rem">
+              <span style="display:inline-block;width:200px;color:#4a5568">PECOS enrollment gap</span>
+              <span style="display:inline-block;width:0px;height:10px;
+                background:#276749;border-radius:3px;vertical-align:middle"></span>
+              <span style="margin-left:4px;font-family:monospace">0.000</span>
+            </div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;color:#4a5568">
+                Medicare: 145 benes &nbsp;|&nbsp;
+                77,819 services &nbsp;|&nbsp;
+                $3,907,005 paid
+              </div>
+            </div>
+            <div>
+              <strong style="font-size:0.85rem;color:#1a365d">LLM Analysis
+                (HIGH confidence)</strong>
+              <p style="font-size:0.85rem;margin:0.5rem 0">Dr. Jason Deutsch exhibits extraordinarily high billing patterns with over 77,000 services billed for only 145 beneficiaries. This level of billing is significantly above the norm for emergency medicine specialists, raising substantial concern for potential fraudulent activity.</p>
+              <div><strong style="font-size:0.8rem;color:#c53030">⚠️ Fraud Indicators:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Extreme billing volume with 536.7 services per beneficiary</li><li>Total Medicare payments of $3,907,005, suggesting excess billing compared to peers</li></ul></div>
+              <div><strong style="font-size:0.8rem;color:#276749">✓ Legitimate Explanations:</strong><ul style="font-size:0.8rem;margin:0.25rem 0 0 1rem"><li>Specialty of emergency medicine often involves high patient volume and complexity</li><li>Potentially serving a high-complexity patient population at a major medical center</li></ul></div>
+              <div style="margin-top:0.5rem;font-size:0.8rem;background:white;
+                          padding:0.5rem;border-radius:4px;border:1px solid #c53030">
+                <strong>Recommended Action:</strong> Request claims audit
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+</body>
+</html>
