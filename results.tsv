@@ -1,0 +1,19 @@
+timestamp	commit	auc_roc	avg_precision	n_scored	n_positives	description
+2026-03-09 00:08	no-git	0.5561	0.0003	1196535	181	Baseline: Part B z-score + Part D cost-per-bene + opioid rate + Open Payments
+2026-03-09 00:22	no-git	0.7695	0.0015	1196535	181	V2: svc-per-bene z-score within specialty + LA opioid rate + PECOS gap x volume + speaking fees
+2026-03-09 00:49	no-git	0.7433	0.0004	1196535	181	V3: +HCPCS concentration HHI + upcoding ratio + taxonomy mismatch + PECOS type mismatch
+2026-03-09 00:50	no-git	0.7433	0.0004	1196535	181	V3: +HCPCS HHI + upcoding + taxonomy mismatch + PECOS mismatch
+2026-03-09 00:52	no-git	0.7325	0.0005	1196535	181	V4: Percentile-based extreme tail scoring (90/95/99th pct) + heavier svc_per_bene weight
+2026-03-09 00:54	no-git	0.7483	0.0008	1196535	181	V5: Focused 3 signals only (svc_per_bene 60% + LA_opioid 30% + PECOS 10%), sharper sigmoid
+2026-03-09 00:55	no-git	0.7664	0.0014	1196535	181	V6: V2 refined weights (svc_per_bene 0.35, LA_opioid 0.25, reduced weak signals)
+2026-03-09 00:56	no-git	0.7904	0.0035	1196535	181	V7: Ensemble 50% max(subscores) + 50% weighted_mean (catch ANY extreme dimension)
+2026-03-09 00:57	no-git	0.7920	0.0038	1196535	181	V8: Ensemble 60% max + 40% weighted_mean
+2026-03-09 00:57	no-git	0.7945	0.0041	1196535	181	V9: Ensemble 70% max + 30% weighted_mean
+2026-03-09 00:57	no-git	0.7973	0.0044	1196535	181	V10: Ensemble 80% max + 20% weighted_mean
+2026-03-09 00:58	no-git	0.8013	0.0048	1196535	181	V11: Ensemble 90% max + 10% weighted_mean
+2026-03-09 01:02	no-git	0.8013	0.0048	1196535	181	V11: Ensemble 90% max + 10% weighted_mean
+2026-03-09 01:03	no-git	0.8098	0.0034	1196535	181	V12: Pure max(subscores) only - no weighted mean
+2026-03-09 01:13	no-git	0.8100	0.0037	1196535	181	V13: 70% max + 30% top-2-mean subscores
+2026-03-09 01:23	no-git	0.8098	0.0034	1196535	181	V14: max^1.5 (amplify extremes)
+2026-03-09 01:32	no-git	0.8098	0.0034	1196535	181	V14: max^1.5 (amplify extremes)
+2026-03-09 01:33	no-git	0.8098	0.0034	1196535	181	V15-FINAL: Pure max^1.2, clean fast implementation
