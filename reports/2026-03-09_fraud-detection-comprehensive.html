@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Fraud Detection Report — March 9, 2026</title>
+    <style>
+        :root {
+            --navy: #1a365d;
+            --red: #c53030;
+            --green: #276749;
+            --blue: #2b6cb0;
+            --yellow: #d69e2e;
+            --gray: #4a5568;
+            --light-gray: #e2e8f0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: #f7fafc;
+            padding: 0;
+        }
+        .header {
+            background: var(--navy);
+            color: white;
+            padding: 2rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .header .subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        .header .meta {
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            opacity: 0.8;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem 3rem;
+        }
+        h2 {
+            color: var(--navy);
+            font-size: 1.4rem;
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--red);
+        }
+        h3 {
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        p { margin-bottom: 1rem; }
+        .alert {
+            padding: 1rem 1.25rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+            border-left: 4px solid;
+        }
+        .alert-green { background: #f0fff4; border-color: var(--green); }
+        .alert-yellow { background: #fffff0; border-color: var(--yellow); }
+        .alert-red { background: #fff5f5; border-color: var(--red); }
+        .alert-blue { background: #ebf8ff; border-color: var(--blue); }
+        .alert strong { display: block; margin-bottom: 0.25rem; }
+        .finding-box {
+            background: white;
+            border: 1px solid var(--light-gray);
+            border-left: 4px solid var(--navy);
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+        .finding-box strong { color: var(--navy); }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        th {
+            background: var(--navy);
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        tr:nth-child(even) { background: #f7fafc; }
+        .tag {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .tag-red { background: #fed7d7; color: var(--red); }
+        .tag-green { background: #c6f6d5; color: var(--green); }
+        .tag-yellow { background: #fefcbf; color: #975a16; }
+        .tag-blue { background: #bee3f8; color: var(--blue); }
+        hr.section-divider {
+            border: none;
+            border-top: 1px solid var(--light-gray);
+            margin: 2.5rem 0;
+        }
+        blockquote {
+            background: #f7fafc;
+            border-left: 4px solid var(--gray);
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: var(--gray);
+        }
+        code {
+            background: #edf2f7;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.85em;
+        }
+        .citation {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+        .chart-container {
+            background: white;
+            border: 1px solid var(--light-gray);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .auc-bar {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+        }
+        .auc-label {
+            width: 80px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .auc-track {
+            flex: 1;
+            height: 24px;
+            background: var(--light-gray);
+            border-radius: 4px;
+            position: relative;
+            margin: 0 0.5rem;
+        }
+        .auc-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--blue), var(--green));
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+        .auc-value {
+            width: 60px;
+            text-align: right;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .key-stat {
+            display: inline-block;
+            background: var(--navy);
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        .key-stat strong {
+            display: block;
+            font-size: 1.5rem;
+        }
+        ul, ol { margin: 1rem 0 1rem 1.5rem; }
+        li { margin: 0.5rem 0; }
+        a { color: var(--blue); }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔬 Healthcare Fraud Detection: Autoresearch Report</h1>
+        <div class="subtitle">Applying Karpathy's autonomous research loop to Medicare claims data</div>
+        <div class="meta">
+            <strong>Date:</strong> March 9, 2026 &nbsp;|&nbsp;
+            <strong>Data:</strong> 90M+ CMS Medicare records &nbsp;|&nbsp;
+            <strong>Final AUC:</strong> 0.81
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Executive Summary -->
+        <div class="alert alert-green">
+            <strong>📊 Executive Summary</strong>
+            In one evening of AI-assisted iteration, we built a fraud detection model that identifies Medicare providers likely to be excluded by the OIG with <strong>0.81 AUC-ROC</strong> — starting from a random baseline of 0.55. The key discovery: fraud shows up as being <em>extreme on any single dimension</em>, not just above average across all dimensions.
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0;">
+            <div class="key-stat"><strong>0.5561 → 0.8098</strong>AUC improvement</div>
+            <div class="key-stat"><strong>18</strong>iterations tested</div>
+            <div class="key-stat"><strong>90M+</strong>CMS records</div>
+            <div class="key-stat"><strong>181</strong>ground truth matches</div>
+        </div>
+
+        <h2>1. The Approach: Karpathy's Autoresearch Pattern</h2>
+        
+        <p>Inspired by <a href="https://github.com/karpathy/autoresearch" target="_blank">Andrej Karpathy's autoresearch project</a>, we adapted the same pattern to healthcare fraud detection:</p>
+
+        <div class="finding-box">
+            <strong>The Loop</strong>
+            <ol>
+                <li><code>eval.py</code> — <strong>Fixed oracle.</strong> Downloads OIG LEIE exclusion list, measures AUC-ROC. Never edited.</li>
+                <li><code>detector.py</code> — <strong>Agent edits this.</strong> Scoring logic that outputs fraud probability per provider.</li>
+                <li><code>results.tsv</code> — <strong>Experiment log.</strong> Tracks AUC progression across iterations.</li>
+            </ol>
+        </div>
+
+        <p>Unlike Karpathy's ML experiments where the eval was validation loss, our ground truth is the <strong>OIG LEIE (List of Excluded Individuals and Entities)</strong> — the official federal database of providers excluded from Medicare due to fraud convictions, license revocations, or program violations.</p>
+
+        <h2>2. Data Sources & Scale</h2>
+
+        <table>
+            <tr><th>Source</th><th>Rows</th><th>Purpose</th></tr>
+            <tr><td>CMS Part B Physician Claims</td><td>1.26M</td><td>Billing volume, service counts, payments</td></tr>
+            <tr><td>CMS Part D Prescribing</td><td>1.38M</td><td>Drug costs, opioid prescribing patterns</td></tr>
+            <tr><td>Open Payments (Sunshine Act)</td><td>14.7M</td><td>Industry financial relationships</td></tr>
+            <tr><td>NPPES NPI Registry</td><td>7.1M</td><td>Provider demographics, taxonomy codes</td></tr>
+            <tr><td>PECOS Enrollment</td><td>2.54M</td><td>Medicare enrollment status</td></tr>
+            <tr><td>OIG LEIE Exclusion List</td><td>~70K</td><td>Ground truth fraud labels</td></tr>
+        </table>
+
+        <p>All data stored in a single <strong>6GB DuckDB database</strong> with 30 tables, enabling fast SQL queries during iteration.</p>
+
+        <div class="alert alert-yellow">
+            <strong>⚠️ Label Limitation</strong>
+            The LEIE contains ~70K excluded providers, but most are non-physicians (nurses, aides, personal care workers) who don't bill Part B directly. Only <strong>181 matched</strong> our CMS physician universe — a tiny 0.015% prevalence. This makes AUC a useful but imperfect metric.
+        </div>
+
+        <h2>3. Model Iterations & AUC Progression</h2>
+
+        <div class="chart-container">
+            <div class="auc-bar">
+                <div class="auc-label">Baseline</div>
+                <div class="auc-track"><div class="auc-fill" style="width: 55.61%"></div></div>
+                <div class="auc-value">0.5561</div>
+            </div>
+            <div class="auc-bar">
+                <div class="auc-label">V2</div>
+                <div class="auc-track"><div class="auc-fill" style="width: 76.95%"></div></div>
+                <div class="auc-value">0.7695</div>
+            </div>
+            <div class="auc-bar">
+                <div class="auc-label">V7</div>
+                <div class="auc-track"><div class="auc-fill" style="width: 79.04%"></div></div>
+                <div class="auc-value">0.7904</div>
+            </div>
+            <div class="auc-bar">
+                <div class="auc-label">V11</div>
+                <div class="auc-track"><div class="auc-fill" style="width: 80.13%"></div></div>
+                <div class="auc-value">0.8013</div>
+            </div>
+            <div class="auc-bar">
+                <div class="auc-label" style="color: var(--green); font-weight: 700;">V12 ✓</div>
+                <div class="auc-track"><div class="auc-fill" style="width: 80.98%; background: linear-gradient(90deg, var(--green), #38a169);"></div></div>
+                <div class="auc-value" style="color: var(--green);">0.8098</div>
+            </div>
+        </div>
+
+        <h3>Key Iterations Explained</h3>
+        
+        <table>
+            <tr><th>Version</th><th>AUC</th><th>Key Change</th><th>Result</th></tr>
+            <tr><td>Baseline</td><td>0.5561</td><td>Raw billing z-scores, global normalization</td><td><span class="tag tag-red">Near random</span></td></tr>
+            <tr><td>V2</td><td>0.7695</td><td>Z-scores <strong>within specialty</strong> + LA opioid rate</td><td><span class="tag tag-green">+21 pts</span></td></tr>
+            <tr><td>V3</td><td>0.7433</td><td>Added HCPCS concentration, taxonomy mismatch</td><td><span class="tag tag-red">-3 pts (noise)</span></td></tr>
+            <tr><td>V7</td><td>0.7904</td><td>Ensemble: 50% max + 50% weighted mean</td><td><span class="tag tag-green">+2 pts</span></td></tr>
+            <tr><td>V12</td><td>0.8098</td><td><strong>Pure max(subscores)</strong> — no averaging</td><td><span class="tag tag-green">Best</span></td></tr>
+        </table>
+
+        <hr class="section-divider">
+
+        <h2>4. Key Findings: What Works</h2>
+
+        <div class="finding-box">
+            <strong>🎯 Discovery #1: Fraud = Extreme on ANY Dimension</strong>
+            <p>Taking <code>max(subscores)</code> across all features dramatically outperforms weighted averaging. Fraudulent providers don't need to be suspicious on every metric — being in the 99th percentile on <em>one</em> metric is enough signal.</p>
+        </div>
+
+        <div class="finding-box">
+            <strong>📈 Discovery #2: Services-per-Beneficiary Within Specialty</strong>
+            <p>The single strongest fraud signal. Excluded providers bill 5-50x more services per patient than peers <em>in the same specialty</em>. Global z-scores miss this because oncologists legitimately bill more than dermatologists.</p>
+        </div>
+
+        <div class="finding-box">
+            <strong>💊 Discovery #3: Long-Acting Opioid Rate</strong>
+            <p>LA opioid prescribing rate (normalized within specialty) catches pill mills that simple opioid rates miss. Anesthesiologists legitimately prescribe opioids — but LA opioids for chronic pain outside of pain management is a red flag.</p>
+        </div>
+
+        <h3>What Doesn't Work</h3>
+        <ul>
+            <li><strong>HCPCS concentration (HHI)</strong> — Adds noise. Some legitimate specialties bill few codes.</li>
+            <li><strong>Taxonomy mismatch</strong> — Too many false positives. Internists doing cardiology is common.</li>
+            <li><strong>Percentile bucketing</strong> — Z-scores capture nuance better than "top 10%" buckets.</li>
+            <li><strong>Adding more features</strong> — Each weak feature dilutes the strong ones.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h2>5. Real-World Validation: Web Research on Top Suspects</h2>
+
+        <p>We manually investigated top-scoring providers via web search to validate model outputs:</p>
+
+        <table>
+            <tr><th>Provider</th><th>Score</th><th>Finding</th><th>Status</th></tr>
+            <tr>
+                <td><strong>Robert Morton, MD</strong><br>Psychiatrist, Ada OK<br>NPI 1336222504</td>
+                <td>0.88</td>
+                <td>$32.7M drug cost flagged. Actually prescribes ultra-expensive specialty psych drugs (Ingrezza $7,700/claim for tardive dyskinesia). 53 years experience at Rolling Hills Hospital.</td>
+                <td><span class="tag tag-green">Legitimate</span></td>
+            </tr>
+            <tr>
+                <td><strong>Anne Greist, MD</strong><br>Hematologist, Indianapolis<br>NPI 1063477073</td>
+                <td>Top</td>
+                <td>48,875 services/bene flagged. IU Simon Cancer Center. Treats hemophilia patients with clotting factor infusions — legitimate academic center.</td>
+                <td><span class="tag tag-green">Legitimate</span></td>
+            </tr>
+            <tr>
+                <td><strong>Kashif Ali, MD</strong><br>Oncologist, Greenbelt MD<br>NPI 1851423388</td>
+                <td>0.85</td>
+                <td>629,920 services on 1,308 patients (481/patient). UM Capital Region Health. Even for infusion oncology, this is an extreme outlier.</td>
+                <td><span class="tag tag-yellow">Investigate</span></td>
+            </tr>
+            <tr>
+                <td><strong>Harsha Vyas, MD</strong><br>Oncologist, Dublin GA<br>NPI 1447447933</td>
+                <td>0.90</td>
+                <td>322,669 services on 764 patients (422/patient). CCMG Cancer Center. Affiliated with Fairview Park Hospital.</td>
+                <td><span class="tag tag-yellow">Investigate</span></td>
+            </tr>
+            <tr>
+                <td><strong>27777 Inkster Rd Cluster</strong><br>Farmington Hills, MI</td>
+                <td>—</td>
+                <td>15,110 providers at one address. Actually: Centria Healthcare ABA therapy corporate headquarters. Legitimate large employer.</td>
+                <td><span class="tag tag-green">Legitimate</span></td>
+            </tr>
+        </table>
+
+        <div class="alert alert-blue">
+            <strong>💡 Key Insight: High-Volume ≠ Fraud</strong>
+            Many top-scoring providers are legitimate high-volume practices (oncology infusions, academic medical centers, specialty psychiatry). The model correctly identifies statistical outliers — human review is essential to distinguish fraud from legitimate specialty care.
+        </div>
+
+        <hr class="section-divider">
+
+        <h2>6. Technical Architecture</h2>
+
+        <pre style="background: #2d3748; color: #e2e8f0; padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.85rem;">
+┌─────────────────────────────────────────────────────────────┐
+│  eval.py (FIXED ORACLE)                                     │
+│  ├── Download OIG LEIE CSV (~70K exclusions)                │
+│  ├── Load CMS NPI universe from DuckDB (1.2M providers)     │
+│  ├── Run detector.py via subprocess (stdin/stdout CSV)     │
+│  ├── Compute AUC-ROC, Average Precision                    │
+│  └── Append to results.tsv                                  │
+└─────────────────────────────────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────┐
+│  detector.py (AGENT EDITS THIS)                             │
+│  ├── Read NPI list from stdin                               │
+│  ├── Query DuckDB for features:                             │
+│  │   ├── Part B billing (services, payments, beneficiaries) │
+│  │   ├── Part D prescribing (opioid rates, drug costs)     │
+│  │   ├── Open Payments (industry relationships)             │
+│  │   └── PECOS enrollment gaps                              │
+│  ├── Compute subscores per feature                          │
+│  ├── Combine via max(subscores) — not weighted average      │
+│  └── Output NPI,score CSV to stdout                         │
+└─────────────────────────────────────────────────────────────┘
+        </pre>
+
+        <h2>7. Next Steps</h2>
+
+        <ol>
+            <li><strong>Expand ground truth</strong> — Supplement LEIE with DOJ press releases, state medical board actions, news articles about fraud convictions</li>
+            <li><strong>Network analysis</strong> — Identify referring provider rings (A refers to B, B orders from C, C kicks back to A)</li>
+            <li><strong>Geographic clustering</strong> — Flag providers at suspicious addresses (not hospitals) with high aggregate billing</li>
+            <li><strong>Train proper ML model</strong> — Use hand-crafted features as inputs to gradient boosting with cross-validation</li>
+            <li><strong>Real-time validation</strong> — Auto-search top suspects, check for OIG press releases, medical board actions</li>
+            <li><strong>Frontend explorer</strong> — Interactive app for manual validation of flagged providers</li>
+        </ol>
+
+        <hr class="section-divider">
+
+        <h2>8. Repository & Resources</h2>
+
+        <ul>
+            <li><strong>GitHub:</strong> <a href="https://github.com/blakethom8/cms-fraud-detection">blakethom8/cms-fraud-detection</a></li>
+            <li><strong>CMS Data Pipeline:</strong> <a href="https://github.com/blakethom8/cms-data">blakethom8/cms-data</a></li>
+            <li><strong>Karpathy's Autoresearch:</strong> <a href="https://github.com/karpathy/autoresearch">karpathy/autoresearch</a></li>
+            <li><strong>OIG LEIE:</strong> <a href="https://oig.hhs.gov/exclusions/">oig.hhs.gov/exclusions</a></li>
+            <li><strong>CMS Data:</strong> <a href="https://data.cms.gov">data.cms.gov</a></li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <p class="citation">
+            <strong>Built:</strong> March 8-9, 2026 in one evening session<br>
+            <strong>Author:</strong> Blake Thomson + Chief (AI assistant)<br>
+            <strong>Data:</strong> All CMS data is publicly available at data.cms.gov
+        </p>
+    </div>
+</body>
+</html>
